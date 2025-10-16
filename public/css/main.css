@@ -1,0 +1,144 @@
+/* === FONDO Y TEMA === */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #0a0f2c 0%, #000 90%);
+  color: #e0e0e0;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* === EFECTO DE LUCES === */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 255, 204, 0.03) 0,
+    rgba(0, 255, 204, 0.03) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  animation: moveGrid 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 50px); }
+}
+
+/* === CONTENEDOR === */
+.contenedor {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 80px auto;
+  background: rgba(15, 25, 45, 0.9);
+  border: 2px solid #00ffc3;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00ffc3a8, inset 0 0 10px #00ffc3a8;
+  padding: 30px;
+  
+  transition: all 0.4s ease;
+  animation: fadeUp 1s ease;
+}
+
+.contenedor:hover {
+  box-shadow: 0 0 40px #00ffc3cc, inset 0 0 20px #00ffc3cc;
+}
+
+/* === TITULO === */
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px #00ffc3, 0 0 20px #00fff7;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+/* === INPUTS Y TEXTAREA === */
+textarea, input {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #00ffc3;
+  border: 2px solid #00ffc3;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+textarea:focus, input:focus {
+  box-shadow: 0 0 15px #00ffc3;
+  outline: none;
+}
+
+label {
+  font-weight: bold;
+  color: #9efeff;
+}
+
+/* === BOTONES === */
+.btn-neon {
+  position: relative;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #00ffc3;
+  border: 2px solid #00ffc3;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: transparent;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  letter-spacing: 1px;
+}
+
+.btn-neon:hover {
+  background: #00ffc3;
+  color: #0a0f2c;
+  box-shadow: 0 0 20px #00ffc3, 0 0 40px #00ffc3;
+}
+
+/* === RESULTADO === */
+#resultado {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #00ffc3;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 150px;
+  color: #e0e0e0;
+  margin-top: 20px;
+  font-family: monospace;
+}
+
+mark {
+  background: #00ffc3;
+  color: #000;
+  padding: 2px 5px;
+  border-radius: 4px;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px #00ffc3; }
+  100% { box-shadow: 0 0 20px #00ffc3; }
+}
+
+/* === CONTADOR === */
+.contador {
+  font-size: 1.2rem;
+  color: #00ffc3;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

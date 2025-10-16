@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador y Resaltador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <div class="contenedor">
+    <h1 class="titulo"> Buscador de Palabras</h1>
+
+    <label for="bloque-texto">Texto o párrafo:</label>
+    <textarea id="bloque-texto" rows="4" placeholder="Escribe o pega tu texto..."></textarea>
+
+    <label for="in_palabra">Palabra a buscar:</label>
+    <input type="text" id="in_palabra" placeholder="Palabra a resaltar">
+
+   <button class="btn-glass" type="button" id="btn_buscar">Buscar y Resaltar</button>
+<button class="btn-glass" type="button" id="btn_limpiar">Limpiar Todo</button>
+
+
+    <h3 class="subtitulo">Resultado: <span id="contador-coincidencias">0</span></h3>
+    <div id="resultado">Aquí aparecerá el texto con las palabras resaltadas.</div>
+  </div>
+
+  <script src="./bundle.js"></script>
+</body>
+</html>
